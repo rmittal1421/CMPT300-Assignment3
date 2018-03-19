@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/cc -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/ass3.dir/main.c.o CMakeFiles/ass3.dir/simulator.c.o CMakeFiles/ass3.dir/list.c.o  -o ass3 

@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/rmittal/Desktop/MY_SFU/CMPT300/Assignment3/ass3/list.c
+list.h
+/Users/rmittal/Desktop/MY_SFU/CMPT300/Assignment3/ass3/list.h
+assert.h
+-
+stddef.h
+-
+stdio.h
+-
+
+/Users/rmittal/Desktop/MY_SFU/CMPT300/Assignment3/ass3/list.h
+
+/Users/rmittal/Desktop/MY_SFU/CMPT300/Assignment3/ass3/main.c
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+ctype.h
+-
+simulator.h
+/Users/rmittal/Desktop/MY_SFU/CMPT300/Assignment3/ass3/simulator.h
+
+/Users/rmittal/Desktop/MY_SFU/CMPT300/Assignment3/ass3/simulator.c
+stdlib.h
+-
+stdio.h
+-
+simulator.h
+/Users/rmittal/Desktop/MY_SFU/CMPT300/Assignment3/ass3/simulator.h
+
+/Users/rmittal/Desktop/MY_SFU/CMPT300/Assignment3/ass3/simulator.h
+list.h
+/Users/rmittal/Desktop/MY_SFU/CMPT300/Assignment3/ass3/list.h
+
