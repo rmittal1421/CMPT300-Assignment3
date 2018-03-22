@@ -12,7 +12,7 @@
 struct msg {
     char* message;
     int state;
-    int idNumber;
+    int processIDForMSG;
     int source;
 };
 typedef struct msg MSG;
@@ -25,6 +25,7 @@ struct process {
 };
 
 struct semaphore {
+    int semaphoreID;
     int value;
     LIST* processesList;
 };
@@ -39,14 +40,17 @@ typedef struct semaphore SEM;
  * We need 3 ready queues according to the priority of the process.
  * namely 0 == high, 1 == norm, 2 == low.
  */
-int semaphore [10];
+
+//since semaphores can only take id from 0 to 4, I only need an array of size 5.
+int semaphoreIDS [5];
 LIST *readyQueue0, *readyQueue1, *readyQueue2;
 PCB *initProcess;
-long processID;
+int processID;
 unsigned int high, norm, low;
-unsigned int running, waiting, blocked;
+unsigned int running, ready;
+int blocked;
 PCB *runningProcess;
-LIST *blockedQueue, *messageQueue;
+LIST *blockedQueue, *messageQueue, *toBeSentQueue, *toRecieveQueue, *semaphoreQueue;
 
 void initializeConstants ();
 void setSemaphores ();
@@ -55,10 +59,18 @@ void createInitProcess ();
 
 void createProcess (int priority);
 void quantum ();
-void fork ();
+void forkProcess ();
 void killProcess(int processID);
 int comparator (PCB* thisProcess, int* comparisonArg);
 void exitProcess ();
 void send (int processId, char* msg);
+void recieve ();
+void reply (int processId, char* msg);
+void newSemaphore (int semaphoreID, int value);
+void semaphoreP (int semaphoreID);
+void semaphoreV (int semaphoreID);
+void processInformation (int processID);
+void totalInformation ();
+int checkIfInitisAlive ();
 
 #endif //ASS3_SIMULATOR_H

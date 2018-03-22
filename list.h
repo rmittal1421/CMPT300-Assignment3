@@ -1,28 +1,22 @@
-//
-// Created by Raghav Mittal on 2018-03-3.
-//
-
-#ifndef ASS3_LIST_H
-#define ASS3_LIST_H
 //list.h
 //This header file contains the prototypes for the list data structure
 
 /* Structure Definitions */
 typedef struct _listNode {
-    void* data;
-    struct _listNode* next;
-    struct _listNode* prev;
+  void* data;
+  struct _listNode* next;
+  struct _listNode* prev;
 } NODE;
 
 
 typedef struct _listHead {
-    int numberOfItems;
-    int status;
-    struct _listHead* forward;
-    struct _listHead* backward;
-    NODE* head;
-    NODE* tail;
-    NODE* current;
+  int numberOfItems;
+  int status;
+  struct _listHead* forward;
+  struct _listHead* backward;
+  NODE* head;
+  NODE* tail;
+  NODE* current;
 } LIST;
 
 
@@ -98,5 +92,3 @@ void* ListTrim(LIST* list);
 // and a NULL pointer is returned.
 void* ListSearch(LIST* list, int (*comparator)(), void* comparisonArg);
 
-
-#endif //ASS3_LIST_H
